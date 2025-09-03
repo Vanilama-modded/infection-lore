@@ -1,1 +1,1 @@
-A simple HTML/JS/CSS starter template
+a doc editor for the nether arcade infection lore
