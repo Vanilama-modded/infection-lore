@@ -3,12 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
-  <link href='/style.css' rel='stylesheet'>
+  <title>AI Document Editor</title>
+  <link href="/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
-  <h1>Hello, world!</h1>
-  <button onclick="console.log('hello');">Press me</button>
+  <div class="container">
+    <div class="toolbar">
+      <button id="bold-button" class="toolbar-button"><span class="material-symbols-outlined">format_bold</span></button>
+      <button id="italic-button" class="toolbar-button"><span class="material-symbols-outlined">format_italic</span></button>
+      <button id="underline-button" class="toolbar-button"><span class="material-symbols-outlined">format_underlined</span></button>
+      <button id="h1-button" class="toolbar-button">H1</button>
+      <button id="h2-button" class="toolbar-button">H2</button>
+      <button id="h3-button" class="toolbar-button">H3</button>
+    </div>
+    <div id="editor" contenteditable="true"></div>
+    <div class="ai-assistant">
+      <div class="ai-header">AI Assistant</div>
+      <div class="ai-chatbox" id="ai-chatbox"></div>
+      <div class="ai-input">
+        <input type="text" id="ai-input" placeholder="Ask AI...">
+        <button id="ai-send-button"><span class="material-symbols-outlined">send</span></button>
+      </div>
+    </div>
+  </div>
   <script defer type="text/javascript" src="/main.js"></script>
 </body>
 </html>
