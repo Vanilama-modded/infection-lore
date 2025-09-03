@@ -1,32 +1,44 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Document Editor</title>
-  <link href="/style.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Editor</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <div class="toolbar">
-      <button id="bold-button" class="toolbar-button"><span class="material-symbols-outlined">format_bold</span></button>
-      <button id="italic-button" class="toolbar-button"><span class="material-symbols-outlined">format_italic</span></button>
-      <button id="underline-button" class="toolbar-button"><span class="material-symbols-outlined">format_underlined</span></button>
-      <button id="h1-button" class="toolbar-button">H1</button>
-      <button id="h2-button" class="toolbar-button">H2</button>
-      <button id="h3-button" class="toolbar-button">H3</button>
+    <div class="editor-container">
+        <div class="toolbar">
+            <button data-command="bold"><b>B</b></button>
+            <button data-command="italic"><i>I</i></button>
+            <button data-command="underline"><u>U</u></button>
+            <button data-command="strikeThrough"><s>S</s></button>
+            <select data-command="fontName">
+                <option value="Arial">Arial</option>
+                <option value="Verdana">Verdana</option>
+                <option value="Times New Roman">Times New Roman</option>
+                <option value="Courier New">Courier New</option>
+            </select>
+            <select data-command="fontSize">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+            </select>
+            <input type="color" data-command="foreColor">
+            <input type="color" data-command="backColor">
+            <button data-command="insertOrderedList">OL</button>
+            <button data-command="insertUnorderedList">UL</button>
+            <button data-command="justifyLeft">Left</button>
+            <button data-command="justifyCenter">Center</button>
+            <button data-command="justifyRight">Right</button>
+            <button data-command="justifyFull">Justify</button>
+        </div>
+        <div id="editor" contenteditable="true"></div>
     </div>
-    <div id="editor" contenteditable="true"></div>
-    <div class="ai-assistant">
-      <div class="ai-header">AI Assistant</div>
-      <div class="ai-chatbox" id="ai-chatbox"></div>
-      <div class="ai-input">
-        <input type="text" id="ai-input" placeholder="Ask AI...">
-        <button id="ai-send-button"><span class="material-symbols-outlined">send</span></button>
-      </div>
-    </div>
-  </div>
-  <script defer type="text/javascript" src="/main.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>

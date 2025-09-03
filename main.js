@@ -1,53 +1,26 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const editor = document.getElementById('editor');
+    const editor = document.getElementById('editor');
+    const toolbar = document.querySelector('.toolbar');
 
-  // Toolbar button actions
-  document.getElementById('bold-button').addEventListener('click', () => {
-    document.execCommand('bold');
-  });
+    toolbar.addEventListener('click', (e) => {
+        const target = e.target.closest('button, select, input');
+        if (!target) return;
 
-  document.getElementById('italic-button').addEventListener('click', () => {
-    document.execCommand('italic');
-  });
+        const command = target.dataset.command;
+        let value = null;
 
-  document.getElementById('underline-button').addEventListener('click', () => {
-    document.execCommand('underline');
-  });
+        if (target.tagName === 'SELECT') {
+            value = target.value;
+        }
 
-  document.getElementById('h1-button').addEventListener('click', () => {
-    document.execCommand('formatBlock', false, 'H1');
-  });
+        if (target.type === 'color') {
+            target.oninput = () => {
+                 document.execCommand(command, false, target.value);
+            }
+        } else {
+            document.execCommand(command, false, value);
+        }
 
-  document.getElementById('h2-button').addEventListener('click', () => {
-    document.execCommand('formatBlock', false, 'H2');
-  });
-
-  document.getElementById('h3-button').addEventListener('click', () => {
-    document.execCommand('formatBlock', false, 'H3');
-  });
-
-  // AI Assistant Logic (Placeholder)
-  const aiSendButton = document.getElementById('ai-send-button');
-  const aiInput = document.getElementById('ai-input');
-  const aiChatbox = document.getElementById('ai-chatbox');
-
-  aiSendButton.addEventListener('click', () => {
-    const message = aiInput.value;
-    if (message.trim()) {
-      // Display user message
-      const userMessage = document.createElement('div');
-      userMessage.textContent = `You: ${message}`;
-      aiChatbox.appendChild(userMessage);
-
-      // Placeholder for AI response
-      const aiResponse = document.createElement('div');
-      aiResponse.textContent = 'AI: Thinking...'; // Placeholder
-      aiChatbox.appendChild(aiResponse);
-      
-      // TODO: Integrate with Gemini API
-
-      aiInput.value = '';
-      aiChatbox.scrollTop = aiChatbox.scrollHeight;
-    }
-  });
+        editor.focus();
+    });
 });

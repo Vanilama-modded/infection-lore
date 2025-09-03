@@ -1,38 +1,41 @@
-# Project Blueprint: AI-Powered Document Editor
+# Project Blueprint: Modern Document Editor
 
 ## Overview
 
-This document outlines the plan for creating a modern, web-based document editor with an integrated AI assistant. The editor will provide a clean, intuitive interface for writing and formatting text, with AI-powered features to enhance the user's workflow.
+This document outlines the plan for creating a modern, web-based document editor that combines the best features of Google Docs and Microsoft Word. The editor will be designed for both desktop and mobile use, offering a seamless and intuitive experience across all devices.
 
 ## Core Features
 
-*   **Rich Text Editor:** A `contenteditable`-based editor that supports common formatting options:
-    *   Bold, Italic, Underline
-    *   Headings (H1, H2, H3)
+*   **Rich Text Editor:** A robust `contenteditable`-based editor that supports a wide range of formatting options:
+    *   Bold, Italic, Underline, Strikethrough
+    *   Font Family and Font Size selection
+    *   Text Color and Highlight Color
+    *   Headings (H1, H2, H3, etc.)
     *   Unordered and Ordered Lists
-    *   Text Alignment
+    *   Text Alignment (Left, Center, Right, Justify)
+    *   Image insertion and resizing
+    *   Tables
+    *   Hyperlinks
 *   **Modern UI/UX:**
-    *   A clean, minimalist, and visually balanced layout.
-    *   A dark theme for a modern aesthetic.
-    *   Subtle background textures and drop shadows to create depth.
-    *   Responsive design for both desktop and mobile use.
-    *   Use of icons for intuitive interaction.
-*   **Integrated AI Assistant (Gemini):**
-    *   A dedicated panel for interacting with the AI.
-    *   The ability to ask questions, generate text, summarize content, and more.
-    *   Context-aware actions (e.g., "summarize selected text").
+    *   A clean, intuitive, and familiar interface.
+    *   Responsive design that adapts to different screen sizes, from mobile phones to large desktop monitors.
+    *   A professional and polished look and feel, with a focus on readability and ease of use.
+*   **Additional Features:**
+    *   Word/character count.
+    *   Save/load documents (initially to local storage, potentially to the cloud later).
+    *   Print functionality.
 
 ## Plan for Current Request
 
-1.  **Create `blueprint.md`:** Establish this document as the single source of truth for the project's design and features.
-2.  **HTML Structure (`index.html`):**
-    *   Set up the main application layout, including a toolbar, the main editor area, and a sidebar for the AI assistant.
-3.  **CSS Styling (`style.css`):**
-    *   Implement the modern design language, including the color palette, typography, spacing, and visual effects like shadows and textures.
-    *   Define styles for the editor, toolbar, buttons, and AI assistant panel.
-4.  **JavaScript Logic (`main.js`):**
-    *   Implement the toolbar functionality for text formatting.
-    *   Set up the basic structure for the AI assistant, including UI interaction and a placeholder for the Gemini API integration.
-5.  **Firebase and Gemini Configuration:**
-    *   Configure the Firebase MCP server.
-    *   Prepare the JavaScript to handle Gemini API requests, including a placeholder for the API key.
+1.  **Update `blueprint.md`:** Reflect the new project direction.
+2.  **Update HTML Structure (`index.html`):**
+    *   Create a more traditional document editor layout with a prominent toolbar (ribbon) at the top.
+    *   Ensure the layout is responsive using meta tags and flexible containers.
+3.  **Update CSS Styling (`style.css`):**
+    *   Redesign the UI to be clean and professional, inspired by modern document editors.
+    *   Implement responsive styles using media queries to ensure a good experience on mobile and desktop.
+    *   Style the toolbar and its controls.
+4.  **Update JavaScript Logic (`main.js`):**
+    *   Implement the functionality for the new toolbar controls.
+    *   Focus on the core text formatting features first.
+    *   Remove the AI assistant panel and related logic.
